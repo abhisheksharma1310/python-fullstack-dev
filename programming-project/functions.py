@@ -12,12 +12,14 @@ def print_options():
     print("6: Update a book")
     print("7: Show all books")
     print("8: Show book")
+    print("x: Exit")
 
 #create Book object instance
 def create_book_obj(book_input):
     book = Book(book_input['id'], book_input['name'], book_input['description'], book_input['isbn'], book_input['page_count'], book_input['issued'], book_input['author'], book_input['year'])
     return book
 
+#input_book_info
 def input_book_info():
     id = input("ID: ")
     name = input("Name: ")
@@ -60,6 +62,7 @@ def save_books(books):
     except:
         print("we had an error while saving books")
 
+#load books
 def load_books():
     try:
         file = open("books.dat", "r")
@@ -126,4 +129,4 @@ def show_book(books):
         book = books[index]
         print(book.to_dict())
     else:
-        print("Enter Id not found")
+        print("Entered Id not found")
