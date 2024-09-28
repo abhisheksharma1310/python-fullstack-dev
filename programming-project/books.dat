@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "name": "2",
+        "description": "3",
+        "isbn": "4",
+        "page_count": 5,
+        "issued": false,
+        "author": "7",
+        "year": 8
+    },
+    {
+        "id": "2",
+        "name": "Deep Learning",
+        "description": "deep learning book",
+        "isbn": "234-34-454-55",
+        "page_count": 343,
+        "issued": true,
+        "author": "hansel",
+        "year": 2019
+    }
+]
