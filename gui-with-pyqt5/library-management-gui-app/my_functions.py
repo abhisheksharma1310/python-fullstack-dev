@@ -30,6 +30,16 @@ def save_books(books):
     with open("books.dat", "w") as file:
         file.write(json.dumps(json_books, indent=4))
 
+# update book
+def update_book(book):
+    book = create_book_obj(book)
+    books = load_books()
+    if book != None:
+        books = list(filter(lambda bk: int(bk.id) != int(book.id), books))
+        books.append(book)
+        save_books(books)
+
+
 # add book
 def add_book(book):
     # first load all saved books
@@ -61,3 +71,16 @@ def get_unissued_books():
     books = load_books()
     return list(filter(lambda book: book.issued == False, books))
 
+# find book by id
+def find_book(book_id):
+    books = load_books()
+    for book in books:
+        if int(book.id) == int(book_id):
+            return book
+    return None
+
+# delete book
+def delete_book(id):
+    books = load_books()
+    books = list(filter(lambda bk: int(bk.id) != int(id), books))
+    save_books(books)
